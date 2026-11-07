@@ -1,0 +1,123 @@
+/* AUTO 071 - Estética Automotiva
+   Estilos da página galeria.html. Cada página tem o seu próprio arquivo de CSS.
+   Identidade: preto + dourado do logo. */
+
+/* ---------- 1. Variáveis (cores e medidas em um só lugar) ---------- */
+:root {
+    --preto: #000;
+    --grafite: #151515;
+    --dourado: #d6ad52;          /* destaque sobre fundo escuro */
+    --dourado-claro: #f0d38e;
+    --dourado-escuro: #7a5a14;   /* texto dourado sobre fundo claro (contraste 6:1) */
+    --fundo-claro: #f3f3f3;
+    --texto: #1c1c1c;
+    --texto-suave: #555;
+    --linha: #e1e1e1;
+    --raio: 6px;
+    --largura: 1120px;
+}
+
+/* ---------- 2. Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--texto);
+    line-height: 1.65;
+    background: #fff;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { line-height: 1.15; }
+h1 { font-size: clamp(2.3rem, 5.6vw, 3.9rem); font-weight: 800; letter-spacing: -.025em; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); font-weight: 800; letter-spacing: -.015em; margin-bottom: .6em; }
+h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .4em; }
+p { max-width: 65ch; }
+.container { width: min(var(--largura), 90%); margin-inline: auto; }
+:focus-visible { outline: 3px solid var(--dourado-escuro); outline-offset: 3px; }
+.topo :focus-visible,
+.pagina-topo :focus-visible,
+.rodape :focus-visible { outline-color: var(--dourado-claro); }
+.pular {
+    position: absolute; left: 12px; top: -60px; z-index: 100;
+    padding: 10px 16px; border-radius: 4px;
+    background: var(--dourado); color: #000; font-weight: 700; text-decoration: none;
+}
+.pular:focus { top: 12px; }
+
+/* ---------- 3. Cabeçalho e menu ---------- */
+.topo { position: relative; background: var(--preto); }
+.cabecalho { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; }
+.marca { display: flex; align-items: center; gap: 14px; color: #fff; text-decoration: none; }
+.marca img { width: 64px; height: 64px; }
+.marca-nome { display: block; font-size: 1.3rem; font-weight: 800; line-height: 1.1; }
+.marca-sub { display: block; font-size: .82rem; color: #bdbdbd; }
+.menu { display: flex; gap: 4px 30px; list-style: none; }
+.menu a {
+    display: block; padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    color: #ececec; font-size: .95rem; text-decoration: none;
+    transition: color .2s ease, border-color .2s ease;
+}
+.menu a:hover { color: var(--dourado); }
+.menu a[aria-current="page"] { color: var(--dourado); border-bottom-color: var(--dourado); }
+.faixa {
+    height: 8px;
+    background: repeating-linear-gradient(135deg, var(--dourado) 0 7px, var(--preto) 7px 14px);
+}
+
+/* ---------- 4. Início: destaque ---------- */
+.pagina-topo { padding: 64px 0 56px; background: var(--grafite); color: #fff; }
+.pagina-topo p { margin-top: 14px; color: #c9c9c9; font-size: 1.08rem; }
+
+/* ---------- 5. Seções ---------- */
+.secao { padding: 84px 0; }
+
+/* ---------- 6. Galeria ---------- */
+.aviso {
+    max-width: 70ch; margin-bottom: 32px; padding: 14px 18px;
+    border-left: 4px solid var(--dourado); background: var(--fundo-claro); color: #333;
+}
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.galeria figure { overflow: hidden; border-radius: var(--raio); background: var(--fundo-claro); }
+.galeria img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.galeria figcaption { padding: 12px 14px; font-weight: 700; }
+.galeria a { text-decoration: none; }
+.galeria a:hover figcaption { color: var(--dourado-escuro); text-decoration: underline; }
+
+/* ---------- 7. Endereço (usado no rodapé) ---------- */
+address { font-style: normal; }
+
+/* ---------- 8. Rodapé ---------- */
+.rodape { padding: 48px 0 28px; background: var(--preto); color: #cfcfcf; }
+.rodape-grade { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }
+.rodape-titulo { margin-bottom: 12px; color: #fff; font-weight: 700; }
+.rodape ul { list-style: none; }
+.rodape li + li { margin-top: 6px; }
+.rodape a { text-decoration: none; }
+.rodape a:hover { color: var(--dourado); }
+.rodape strong { color: var(--dourado); }
+.copyright { margin-top: 32px; padding-top: 20px; border-top: 1px solid #2a2a2a; color: #9a9a9a; font-size: .85rem; max-width: none; }
+
+/* ---------- 9. Responsivo ---------- */
+@media (max-width: 960px) {
+    .rodape-grade { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+    /* No celular o menu quebra em linhas */
+    .cabecalho { flex-wrap: wrap; padding: 12px 0; }
+    #menu { flex-basis: 100%; }
+    .menu { flex-wrap: wrap; gap: 4px 20px; }
+    .secao { padding: 64px 0; }
+    .galeria { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+    .galeria, .rodape-grade { grid-template-columns: 1fr; }
+    .marca-sub { display: none; }
+}
+
+/* ---------- 10. Respeita quem pede menos movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+}

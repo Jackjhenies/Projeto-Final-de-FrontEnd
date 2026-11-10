@@ -31,8 +31,11 @@ Cada página usa o seu próprio CSS (mesmo nome do HTML). A parte que se repete 
 4. **Fotos reais:** as imagens atuais são ilustrativas. Troque-as por fotos de trabalhos feitos pela loja (mantenha os mesmos nomes de arquivo) e remova o aviso em `galeria.html` e `servicos.html`.
 5. **Página 404:** muitas hospedagens exigem que `404.html` fique na raiz do site. Se a sua exigir, mova o arquivo e ajuste os caminhos (`../css/` e `../img/` viram `css/` e `img/`).
 
+## IDs no lugar de classes
+Os elementos são identificados por `id` (não há mais `class`). Um id só pode aparecer uma vez por página, então elementos repetidos têm id numerado (`card-1` a `card-6`, `botao-1`, `botao-2`...). Ao criar um elemento repetido novo, dê o próximo número e acrescente o id na lista de seletores do CSS.
+
 ## Como editar
 - **Cores:** bloco `:root` no início de cada arquivo `.css`.
-- **Horários:** procure `<dl class="horarios">` (está em `index.html` e `contato.html`) e no rodapé de cada página.
+- **Horários:** procure `<dl id="horarios">` (está em `index.html` e `contato.html`) e no rodapé de cada página.
 - **Nova imagem:** salve em WebP, ~800 px de largura, e informe `width` e `height` na tag `<img>`.
 - **Menu no celular:** como não há JavaScript, os links do menu aparecem sempre em linha, abaixo do logo.

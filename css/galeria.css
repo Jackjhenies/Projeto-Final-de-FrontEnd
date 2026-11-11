@@ -1,9 +1,4 @@
-/* AUTO 071 - Estética Automotiva
-   Estilos da página galeria.html. Cada página tem o seu próprio arquivo de CSS.
-   Identidade: preto + dourado do logo.
-   Seletores por ID: cada id é único na página; elementos repetidos (cards, botões...) têm id numerado (ex.: card-1, card-2). */
-
-/* ---------- 1. Variáveis (cores e medidas em um só lugar) ---------- */
+/* Variáveis (cores e medidas em um só lugar) */
 :root {
     --preto: #000;
     --grafite: #151515;

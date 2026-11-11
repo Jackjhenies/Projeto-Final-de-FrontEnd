@@ -24,16 +24,6 @@ AUTO-071/
 
 Cada página usa o seu próprio CSS (mesmo nome do HTML). A parte que se repete em todas (cores, cabeçalho, rodapé) está copiada dentro de cada arquivo, então ao mudar uma cor ou o cabeçalho é preciso alterar nos 6 arquivos.
 
-## Pendências antes de publicar
-1. **Domínio:** em todos os `.html`, troque `https://SEU-DOMINIO.com.br` pelo endereço real (é usado só na prévia de compartilhamento no WhatsApp/Facebook).
-2. **Contato:** o site ainda não tem telefone/WhatsApp/Instagram. Quando houver, acrescente em `contato.html`, no bloco "Endereço", e no rodapé de cada página.
-3. **Endereço:** acrescente o número do imóvel ou ponto de referência.
-4. **Fotos reais:** as imagens atuais são ilustrativas. Troque-as por fotos de trabalhos feitos pela loja (mantenha os mesmos nomes de arquivo) e remova o aviso em `galeria.html` e `servicos.html`.
-5. **Página 404:** muitas hospedagens exigem que `404.html` fique na raiz do site. Se a sua exigir, mova o arquivo e ajuste os caminhos (`../css/` e `../img/` viram `css/` e `img/`).
-
-## IDs no lugar de classes
-Os elementos são identificados por `id` (não há mais `class`). Um id só pode aparecer uma vez por página, então elementos repetidos têm id numerado (`card-1` a `card-6`, `botao-1`, `botao-2`...). Ao criar um elemento repetido novo, dê o próximo número e acrescente o id na lista de seletores do CSS.
-
 ## Como editar
 - **Cores:** bloco `:root` no início de cada arquivo `.css`.
 - **Horários:** procure `<dl id="horarios">` (está em `index.html` e `contato.html`) e no rodapé de cada página.

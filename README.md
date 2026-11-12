@@ -111,7 +111,7 @@ Depois acesse `http://localhost:8000/html/index.html`.
 
 Por ser um site estático, eu subi ele para o VERCEL para um acesso mais facil.
 
-- Link para o site:`https://auto-071-9wzsjggrj-jackjhenies-igor-rafael.vercel.app`.
+- Link para o site:`https://auto-071.vercel.app`.
 
 
 ## Informações do negócio
